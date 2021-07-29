@@ -1,10 +1,8 @@
 const vueElement = new Vue({
     el: "body main",
     data: {
-        newTask: {
-            task: "",
-            tagColor: "",
-        },
+        newTask: "",
+        newTagColor: "",
         tasks: [
             {
                 task: "Fare la spesa",
@@ -33,10 +31,14 @@ const vueElement = new Vue({
             this.tasks.splice(index, 1);
         },
         addTask() {
-            if (this.newTask.task.trim() != "") {
-                this.tasks.push(this.newTask);
-                this.newTask.task = "";
-                this.newTask.tagColor = "";
+            const auxNewTask = {
+                task: this.newTask,
+                tagColor: this.newTagColor,
+            };
+            if (this.newTask.trim() != "") {
+                this.tasks.push(auxNewTask);
+                this.newTask = "";
+                this.newTagColor = "";
             }
         }
     }

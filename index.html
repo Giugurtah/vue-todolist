@@ -18,11 +18,11 @@
     </header>
     <!-- Sezione di contenuti principali -->
     <main>
-        <div class="container w-50 text-center">
+        <div class="container w-60 text-center">
             <!-- Sezione di stampa lista attività nel caso ce ne siano -->
             <div v-if="tasks.length > 0" class="tasks-display">
                 <div class="d-flex justify-content-between align-items-center" v-for="(item, index) in tasks">
-                    <div>{{item}}</div>
+                    <div> <i class="fas fa-circle fa-xs" :style="{color: item.tagColor}"></i> {{item.task}}</div>
                     <i class="fas fa-times red-text" @click="deleteTask(index)"></i>
                 </div>
             </div>
@@ -32,8 +32,14 @@
             </div>
             <!-- Sezione di aggiuta attività -->
             <div class="input-group my-3">
-                <input type="text" class="form-control" placeholder="Scrivi qui...">
-                <button class="btn btn-outline-danger" type="button">Aggiungi attività</button>
+                <input type="text" class="form-control" placeholder="Scrivi qui..." v-model="newTask.task">
+                <select class="form-select" id="inputGroupSelect01" v-model="newTask.tagColor">
+                    <option disabled selected value="">Colore tag</option>
+                    <option value="black">Nero</option>
+                    <option value="lightgray">Grigio chiaro</option>
+                    <option value="gray">Grigio scuro</option>
+                  </select>
+                <button class="btn btn-outline-danger" type="button" @click="addTask">Aggiungi attività</button>
               </div>              
         </div>
     </main>

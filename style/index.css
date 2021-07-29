@@ -3,6 +3,11 @@
     color: #dc3545;
 }
 
+/* Size properties */
+.w-60 {
+    width: 60%;
+}
+
 /* Styling header */
 header {
     line-height: 90px;
@@ -29,3 +34,6 @@ main > .container {
     border-bottom: 0px;
 }
 
+.input-group > .form-control {
+    width: 50%;
+}

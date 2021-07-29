@@ -1,0 +1,31 @@
+/* Color properties */
+.red-text {
+    color: #dc3545;
+}
+
+/* Styling header */
+header {
+    line-height: 90px;
+    font-size: 50px;
+}
+
+/* Styling main */
+main > .container {
+    padding: 0;
+}
+.tasks-display {
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+}
+
+.tasks-display > div {
+    border-bottom: 1px solid #ced4da;
+    padding: 10px 15px;
+
+    font-weight: 500;
+}
+
+.tasks-display > div:last-of-type {
+    border-bottom: 0px;
+}
+
